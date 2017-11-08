@@ -1,30 +1,107 @@
-import mongodb from 'mongodb';
+import monk from 'monk';
 
 module.exports = {
 
-    findAll: (collection, res) =>{
-        console.log(collection);
-        res.send("collection is set to " + collection);
+    findAll: (service, res) =>{
+        try{
+            const url = process.env.DB_USER+':'+process.env.DB_PASSWORD+'@'+process.env.DB_URL;
+            const db = monk(url);
+            const collection = db.get(service);
+            collection.find({}).then((docs) => {
+                db.close();
+                res.send(docs)
+            });
+        }catch (err){
+            res.status(500).send(err)
+        }
     },
-    getById: (collection, id, res) =>{
-        console.log(collection);
-        res.send("collection is set to " + collection);
+    getById: (service, id, res) =>{
+        try{
+            const url = process.env.DB_USER+':'+process.env.DB_PASSWORD+'@'+process.env.DB_URL;
+            const db = monk(url);
+            const collection = db.get(service);
+            collection.findOne({_id:id}).then((docs) => {
+                db.close();
+                if(docs){
+                    res.send(docs)
+                }else{
+                    res.status(404).send(docs);
+                }
+
+            });
+        }catch (err){
+            res.status(500).send(err)
+        }
     },
-    insert: (collection, body, res) =>{
-        console.log(collection);
-        res.send("collection is set to " + collection);
+    insert: (service, body, res) =>{
+
+        if(Object.keys(body).length === 0 && body.constructor === Object){
+            res.status(400).send({});
+            return;
+        }
+
+        try{
+            const url = process.env.DB_USER+':'+process.env.DB_PASSWORD+'@'+process.env.DB_URL;
+            const db = monk(url);
+            const collection = db.get(service);
+            collection.insert(body).then((docs) => {
+                db.close();
+                res.send(docs)
+            });
+        }catch (err){
+            res.status(500).send(err)
+        }
     },
-    update: (collection, id, body, res) =>{
-        console.log(collection);
-        res.send("collection is set to " + collection);
+    update: (service, id, body, res) =>{
+
+        if(Object.keys(body).length === 0 && body.constructor === Object){
+            res.status(400).send({});
+            return;
+        }
+
+        try{
+            const url = process.env.DB_USER+':'+process.env.DB_PASSWORD+'@'+process.env.DB_URL;
+            const db = monk(url);
+            const collection = db.get(service);
+            collection.update({_id:id},body).then((docs) => {
+                db.close();
+                res.send(docs)
+            });
+        }catch (err){
+            res.status(500).send(err)
+        }
     },
-    delete: (collection,id,res) =>{
-        console.log(collection);
-        res.send("collection is set to " + collection);
+    delete: (service,id,res) =>{
+        try{
+            const url = process.env.DB_USER+':'+process.env.DB_PASSWORD+'@'+process.env.DB_URL;
+            const db = monk(url);
+            const collection = db.get(service);
+            collection.remove({_id:id}).then((docs) => {
+                db.close();
+                res.send(docs)
+            });
+        }catch (err){
+            res.status(500).send(err)
+        }
     },
-    query: (collection, body, res) =>{
-        console.log(collection);
-        res.send("collection is set to " + collection);
+    query: (service, body, res) =>{
+
+        if(Object.keys(body).length === 0 && body.constructor === Object){
+            res.status(400).send({});
+            return;
+        }
+
+        try{
+            const url = process.env.DB_USER+':'+process.env.DB_PASSWORD+'@'+process.env.DB_URL;
+            const db = monk(url);
+            const collection = db.get(service);
+            collection.find(body).then((docs) => {
+                db.close();
+                res.send(docs)
+            });
+        }catch (err){
+            res.status(500).send(err)
+        }
     }
 } ;
 

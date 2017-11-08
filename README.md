@@ -54,9 +54,9 @@ go to [http://localhost:3000](http://localhost:3000) in your browser.
  Environment variables must be configured into `.env` file located at project root
 
 ```
-DB_URL=mongodb://localhost:27017/database
-DB_USER=username
-DB_PASSWORD=password123
+DB_URL = mongodb://localhost:27017/database
+DB_USER = username
+DB_PASSWORD = password
 ```
 
 ## Production
