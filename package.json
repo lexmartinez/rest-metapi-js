@@ -27,8 +27,10 @@
   "homepage": "https://github.com/lexmartinez/rest-metapi-js#readme",
   "dependencies": {
     "body-parser": "~1.0.1",
+    "dotenv": "^4.0.0",
     "express": "~4.0.0",
     "mongodb": "^2.2.33",
+    "morgan": "^1.9.0",
     "serve-favicon": "^2.4.5"
   },
   "devDependencies": {

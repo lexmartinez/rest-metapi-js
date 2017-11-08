@@ -1,21 +1,19 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import favicon from 'serve-favicon';
+import routes from './routes';
+import logger from 'morgan';
 
+dotenv.config();
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(logger('dev'));
+app.use(express.static('public'))
+app.use('/api', routes);
+app.use(favicon('public/favicon.ico'));
 
-const router = express.Router();
-
-router.get('/', function(req, res) {
-    res.send("Hello World!");
-});
-
-app.use(router);
-
-app.use(favicon('public/favicon.ico'))
-
-app.listen(3000, function() {
+app.listen(3000, () => {
     console.log("Node server running on http://localhost:3000");
 });

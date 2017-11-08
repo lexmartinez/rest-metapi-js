@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REST MetaAPI JS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+</head>
+<body style="margin-left:200px; margin-top: 100px">
+<h1 id="restmetapijs"><a href="https://github.com/lexmartinez/rest-metapi-js" target="_blank"><i class="fa fa-github-alt"></i></a> rest-metapi-js</h1>
+
+<p>Dynamic REST API:
+    Just create a MongoDB collection and it's all.. you got a RESTful Web Service to manage that collection.</p>
+
+<ul>
+    <li>Avoid any back-end implementation.</li>
+
+    <li>Feel free to focus on improving your front-end.</li>
+
+    <li>No additional commands needed.</li>
+</ul>
+
+<blockquote>
+    <p>Based on <a href="https://github.com/lexmartinez/rest-metapi" target="_blank">rest-metapi</a> (Java implementation)</p>
+</blockquote>
+<br/>
+
+<h2 id="serviceendpoints">Service Endpoints</h2>
+
+<p>Every RESTful Webservice includes this endpoints:</p>
+
+<ul>
+    <li>findAll</li>
+</ul>
+
+<pre><code>    GET: /api/{collection}
+</code></pre>
+
+<ul>
+    <li>getById</li>
+</ul>
+
+<pre><code>    GET: /api/{collection}/{id}
+</code></pre>
+
+<ul>
+    <li>insert</li>
+</ul>
+
+<pre><code>    POST: /api/{collection}
+</code></pre>
+
+<ul>
+    <li>query</li>
+</ul>
+
+<pre><code>    POST: /api/{collection}/query
+    //REQUIRES JSON Body request with search prototype
+</code></pre>
+
+<ul>
+    <li>update</li>
+</ul>
+
+<pre><code>    PUT: /api/{collection}/{id}
+</code></pre>
+
+<ul>
+    <li>delete</li>
+</ul>
+
+<pre><code>    DELETE: /api/{collection}/{id}
+</code></pre>
+</body>
+</html>

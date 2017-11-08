@@ -65,32 +65,41 @@ You can now go to `/dist` and deploy that to your server!
 Every RESTful Webservice includes this endpoints:
 
 + findAll
-```java
+```ruby
     GET: /api/{collection}
 ```
 
 + getById
-```java
+```ruby
     GET: /api/{collection}/{id}
 ```
 
 + insert
-```java
+```ruby
     POST: /api/{collection}
 ```
 
 + query
-```java
+```ruby
     POST: /api/{collection}/query
     //REQUIRES JSON Body request with search prototype
 ```
 
 + update
-```java
+```ruby
     PUT: /api/{collection}/{id}
 ```
 
 + delete
-```java
+```ruby
     DELETE: /api/{collection}/{id}
+```
+
+> Environment variables must be configured into `.env` file located at project root
+
+```ruby
+// .env file prototype
+DB_URL=mongodb://localhost:2667/database
+DB_USER=username
+DB_PASSWORD=password123
 ```
