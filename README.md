@@ -32,6 +32,7 @@ go to [http://localhost:3000](http://localhost:3000) in your browser.
 
 * [Dependencies](#dependencies)
 * [Developing](#developing)
+* [Environment](#environment)
 * [Production](#production)
 * [Service Endpoints](#service-endpoints)
     
@@ -49,7 +50,16 @@ go to [http://localhost:3000](http://localhost:3000) in your browser.
  
  It will start a local server using `nodemon` which will watch, build (in-memory), and reload for you. The application can be checked at `http://localhost:3000`.
  
- 
+ ## Environment
+> Environment variables must be configured into `.env` file located at project root
+
+```java
+// .env file prototype
+DB_URL=mongodb://localhost:2667/database
+DB_USER=username
+DB_PASSWORD=password123
+```
+
 ## Production
 
 To build your application, run:
@@ -93,13 +103,4 @@ Every RESTful Webservice includes this endpoints:
 + delete
 ```ruby
     DELETE: /api/{collection}/{id}
-```
-
-> Environment variables must be configured into `.env` file located at project root
-
-```ruby
-// .env file prototype
-DB_URL=mongodb://localhost:2667/database
-DB_USER=username
-DB_PASSWORD=password123
 ```
