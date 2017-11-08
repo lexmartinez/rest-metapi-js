@@ -9,8 +9,6 @@ Just create a MongoDB collection and it's all.. you got a RESTful Web Service to
 
 > Based on [rest-metapi](https://github.com/lexmartinez/rest-metapi) (Java implementation)
 
-#####Project Keywords: `NodeJS` `MongoDB` `RESTful` `ExpressJS`
-
 ## Service Endpoints
 Every RESTful Webservice includes this endpoints:
 
