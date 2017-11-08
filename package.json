@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/ --exec babel-node",
-    "build": "babel src -d dist",
+    "build": "babel src -d dist && cp -R public/ dist/public",
     "serve": "node dist/"
   },
   "repository": {
@@ -13,6 +13,8 @@
     "url": "git+https://github.com/lexmartinez/rest-metapi-js.git"
   },
   "keywords": [
+    "javascript",
+    "es6",
     "nodejs",
     "mongodb",
     "restful-api",
@@ -24,9 +26,10 @@
   },
   "homepage": "https://github.com/lexmartinez/rest-metapi-js#readme",
   "dependencies": {
+    "body-parser": "~1.0.1",
     "express": "~4.0.0",
-    "mongoose": "~3.6.13",
-    "body-parser": "~1.0.1"
+    "mongodb": "^2.2.33",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

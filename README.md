@@ -27,7 +27,41 @@ $ npm start
 ```
 go to [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Service Endpoints
+
+# Table of Contents
+
+* [Dependencies](#dependencies)
+* [Developing](#developing)
+* [Production](#production)
+* [Service Endpoints](#service-endpoints)
+    
+ ## Dependencies
+ 
+ What you need to run this app:
+ * `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
+ * Ensure you're running Node (`v7.x.x`+) and NPM (`4.x.x`+)
+ 
+ ## Developing
+ 
+ After you have installed all dependencies you can now start developing with:
+ 
+ * `npm start`
+ 
+ It will start a local server using `nodemon` which will watch, build (in-memory), and reload for you. The application can be checked at `http://localhost:3000`.
+ 
+ 
+## Production
+
+To build your application, run:
+
+* `npm run build`
+
+You can now go to `/dist` and deploy that to your server!
+
+> You also can run your compiled project locally  using the command `npm run serve`
+
+
+## Service Endpoints
 Every RESTful Webservice includes this endpoints:
 
 + findAll
@@ -60,37 +94,3 @@ Every RESTful Webservice includes this endpoints:
 ```java
     DELETE: /api/{collection}/{id}
 ```
-
-# Table of Contents
-
-* [Getting Started](#getting-started)
-* [Dependencies](#dependencies)
-* [Developing](#developing)
-* [Production](#production)
-    
- ## Dependencies
- 
- What you need to run this app:
- * `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
- * Ensure you're running Node (`v7.x.x`+) and NPM (`4.x.x`+)
- 
- ## Developing
- 
- After you have installed all dependencies you can now start developing with:
- 
- * `npm start`
- 
- It will start a local server using `nodemon` which will watch, build (in-memory), and reload for you. The application can be checked at `http://localhost:3000`.
- 
- 
-## Production
-
-To build your application, run:
-
-* `npm run build`
-
-You can now go to `/dist` and deploy that to your server!
-
-> You also can run your compiled project locally  using the command `npm run serve`
-
-
