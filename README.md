@@ -54,8 +54,7 @@ go to [http://localhost:3000](http://localhost:3000) in your browser.
  Environment variables must be configured into `.env` file located at project root
 
 ```
-// .env file prototype
-DB_URL=mongodb://localhost:2667/database
+DB_URL=mongodb://localhost:27017/database
 DB_USER=username
 DB_PASSWORD=password123
 ```
@@ -89,10 +88,9 @@ Every RESTful Webservice includes this endpoints:
     POST: /api/{collection}
 ```
 
-+ query
++ query (requires JSON body request with search prototype)
 ```ruby
     POST: /api/{collection}/query
-    //REQUIRES JSON Body request with search prototype
 ```
 
 + update
