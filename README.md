@@ -51,7 +51,7 @@ go to [http://localhost:3000](http://localhost:3000) in your browser.
  It will start a local server using `nodemon` which will watch, build (in-memory), and reload for you. The application can be checked at `http://localhost:3000`.
  
  ## Environment
-> Environment variables must be configured into `.env` file located at project root
+ Environment variables must be configured into `.env` file located at project root
 
 ```java
 // .env file prototype
