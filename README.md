@@ -61,7 +61,7 @@ DB_PASSWORD = password
 GITHUB_CLIENT_ID = YourGithubAppClientKey
 GITHUB_CLIENT_SECRET = YourGithubAppSecretKey
 ```````
-> For help about the Github OAuth Apps see [Github Docs - Registering Oauth Apps](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/)
+> For help about the Github OAuth Apps see [Github Docs - Registering OAuth Apps](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/)
 
 ## Production
 
