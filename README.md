@@ -35,6 +35,7 @@ go to [http://localhost:3000](http://localhost:3000) in your browser.
 * [Environment](#environment)
 * [Production](#production)
 * [Service Endpoints](#service-endpoints)
+* [Github Security](#github-security)
     
  ## Dependencies
  
@@ -57,7 +58,10 @@ go to [http://localhost:3000](http://localhost:3000) in your browser.
 DB_URL = mongodb://localhost:27017/database
 DB_USER = username
 DB_PASSWORD = password
-```
+GITHUB_CLIENT_ID = YourGithubAppClientKey
+GITHUB_CLIENT_SECRET = YourGithubAppSecretKey
+```````
+> For help about the Github OAuth Apps see [https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/)
 
 ## Production
 
@@ -102,3 +106,27 @@ Every RESTful Webservice includes this endpoints:
 ```ruby
     DELETE: /api/{collection}/{id}
 ```
+
+## Github Security
+This project includes an Github/OAuth integration using [node-github](https://github.com/octokit/node-github) library.
+
+To use RESTful API endpoints, user must get a token access with `POST` request like that:
+
+```json
+    URL: htttp://localhost:3000/auth
+    
+    {
+      "username":"yourusername", 
+      "password":"password12344"
+    }
+```
+
+Server will response a JSON like that:
+
+```json
+   {
+      "token":"ddc9105ebffe8f986015284ebcc3b5750d5d9920"
+   }
+```
+
+Add `metapi-js-token` request header to API request and voil&#224;, now our dynamic api is protected via Github

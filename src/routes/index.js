@@ -1,6 +1,39 @@
 import express from 'express';
 import * as db from '../db' ;
+import GitHubApi from 'github';
+
 const router  = express.Router();
+const github = new GitHubApi();
+
+const auth = function (req, res, next) {
+
+    const token = req.headers['metapi-js-token'];
+
+    if(!token){
+        res.status(401).send({code:401, message:'Unauthorized'});
+        return;
+    }
+
+    github.authenticate({
+        type: 'basic',
+        username:  process.env.GITHUB_CLIENT_ID,
+        password:  process.env.GITHUB_CLIENT_SECRET
+    });
+
+    github.authorization.check({
+        client_id: process.env.GITHUB_CLIENT_ID,
+        access_token:token
+    }, (err, response)=>{
+        if(err) {
+            console.log(err)
+            res.status(401).send(err.message|err)
+            return;
+        }
+        next();
+    })
+};
+
+router.use(auth)
 
 router.get('/:collection', (req, res) => {
     db.findAll(req.params.collection, res);
