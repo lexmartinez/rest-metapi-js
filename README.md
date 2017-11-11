@@ -1,7 +1,7 @@
 # rest-metapi-js
 
 
-Dynamic REST API:
+:fish: Dynamic REST API:
 Just create a MongoDB collection and it's all.. you got a RESTful Web Service to manage that collection.
 + Avoid any back-end implementation.
 + Feel free to focus on improving your front-end.
