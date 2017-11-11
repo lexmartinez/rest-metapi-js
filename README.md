@@ -1,7 +1,7 @@
 # rest-metapi-js
 
 
-Dynamic REST API:
+:fish: Dynamic REST API:
 Just create a MongoDB collection and it's all.. you got a RESTful Web Service to manage that collection.
 + Avoid any back-end implementation.
 + Feel free to focus on improving your front-end.
@@ -61,7 +61,7 @@ DB_PASSWORD = password
 GITHUB_CLIENT_ID = YourGithubAppClientKey
 GITHUB_CLIENT_SECRET = YourGithubAppSecretKey
 ```````
-> For help about the Github OAuth Apps see [https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/)
+> For help about the Github OAuth Apps see [Github Docs - Registering OAuth Apps](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/)
 
 ## Production
 
